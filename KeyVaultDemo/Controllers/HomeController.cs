@@ -33,6 +33,8 @@ namespace KeyVaultDemo.Controllers
                 var client = new SecretClient(new Uri(KeyVaultUrl), new DefaultAzureCredential());
                 var secret = client.GetSecretAsync("colour").Result.Value.Value;
                 ViewBag.Color = secret;
+
+                ViewBag.Name = mConfiguration.GetSection("name").Value;
             }
             catch (Exception ex)
             {
