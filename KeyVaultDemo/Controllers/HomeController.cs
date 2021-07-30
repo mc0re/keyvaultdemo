@@ -35,6 +35,7 @@ namespace KeyVaultDemo.Controllers
                 ViewBag.Color = secret;
 
                 ViewBag.Name = mConfiguration.GetSection("name").Value;
+                ViewBag.City = mConfiguration.GetSection("city").Value;
             }
             catch (Exception ex)
             {
